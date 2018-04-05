@@ -45,10 +45,26 @@ void test_depth()
   ASSERT(lft_depth(7) == 3);
 }
 
+void test_offset()
+{
+  ASSERT(lft_offset(0) == 0);
+  ASSERT(lft_offset(1) == 0);
+  ASSERT(lft_offset(3) == 0);
+  ASSERT(lft_offset(7) == 0);
+  ASSERT(lft_offset(2) == 1);
+  ASSERT(lft_offset(4) == 2);
+  ASSERT(lft_offset(444) == 222);
+  ASSERT(lft_offset(11) == 1);
+  ASSERT(lft_offset(19) == 2);
+  ASSERT(lft_offset(13) == 3);
+  ASSERT(lft_offset(39) == 2);
+}
+
 int main(int argc, char** argv)
 {
   TEST(index);
   TEST(depth);
+  TEST(offset);
 
   return TEST_RESULT;
 }

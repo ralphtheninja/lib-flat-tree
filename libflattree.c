@@ -26,3 +26,13 @@ int lft_depth(size_t index)
 
   return depth;
 }
+
+static int offset_with_depth(size_t index, int depth)
+{
+  return is_even(index) ? index / 2 : index >> (depth + 1);
+}
+
+int lft_offset(size_t index)
+{
+  return offset_with_depth(index, lft_depth(index));
+}

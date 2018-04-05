@@ -34,6 +34,10 @@ Returns an array index for the tree element at the given depth and offset.
 
 Returns the depth of an element.
 
+### `int lft_offset(size_t index)`
+
+Returns the relative offset of an element.
+
 ## License
 
 MIT
