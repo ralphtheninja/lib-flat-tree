@@ -6,7 +6,7 @@ int TEST_RESULT = 0;
 
 #define TEST(fn)                               \
   printf("# Testing " #fn "\n");               \
-  fn();
+  test_##fn();
 
 #define ASSERT(A)                                         \
   if (!(A)) {                                             \
@@ -47,8 +47,8 @@ void test_depth()
 
 int main(int argc, char** argv)
 {
-  TEST(test_index);
-  TEST(test_depth);
+  TEST(index);
+  TEST(depth);
 
   return TEST_RESULT;
 }
