@@ -4,5 +4,6 @@
 #include <stdlib.h>
 
 size_t lft_index(int depth, int offset);
+int lft_depth(size_t index);
 
 #endif // __libflattree_h__
