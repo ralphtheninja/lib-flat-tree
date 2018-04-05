@@ -60,11 +60,25 @@ void test_offset()
   ASSERT(lft_offset(39) == 2);
 }
 
+void test_sibling()
+{
+  ASSERT(lft_sibling(1) == 5);
+  ASSERT(lft_sibling(5) == 1);
+  ASSERT(lft_sibling(9) == 13);
+  ASSERT(lft_sibling(13) == 9);
+  ASSERT(lft_sibling(3) == 11);
+  ASSERT(lft_sibling(7) == 23);
+  ASSERT(lft_sibling(23) == 7);
+  ASSERT(lft_sibling(19) == 27);
+  ASSERT(lft_sibling(27) == 19);
+}
+
 int main(int argc, char** argv)
 {
   TEST(index);
   TEST(depth);
   TEST(offset);
+  TEST(sibling);
 
   return TEST_RESULT;
 }

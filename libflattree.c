@@ -36,3 +36,13 @@ int lft_offset(size_t index)
 {
   return offset_with_depth(index, lft_depth(index));
 }
+
+static int sibling_with_depth(size_t index, int depth)
+{
+  return lft_index(depth, lft_offset(index) ^ 1);
+}
+
+size_t lft_sibling(size_t index)
+{
+  return sibling_with_depth(index, lft_depth(index));
+}
