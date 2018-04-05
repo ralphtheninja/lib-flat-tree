@@ -42,6 +42,10 @@ Returns the relative offset of an element.
 
 Returns the index of this elements sibling.
 
+### `size_t lft_parent(size_t index);`
+
+Returns the index of the parent element.
+
 ## License
 
 MIT

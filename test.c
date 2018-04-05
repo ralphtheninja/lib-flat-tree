@@ -73,12 +73,24 @@ void test_sibling()
   ASSERT(lft_sibling(27) == 19);
 }
 
+void test_parent()
+{
+  ASSERT(lft_parent(0) == 1);
+  ASSERT(lft_parent(2) == 1);
+  ASSERT(lft_parent(1) == 3);
+  ASSERT(lft_parent(3) == 7);
+  ASSERT(lft_parent(11) == 7);
+  ASSERT(lft_parent(29) == 27);
+  ASSERT(lft_parent(27) == 23);
+}
+
 int main(int argc, char** argv)
 {
   TEST(index);
   TEST(depth);
   TEST(offset);
   TEST(sibling);
+  TEST(parent);
 
   return TEST_RESULT;
 }

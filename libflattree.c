@@ -42,3 +42,9 @@ size_t lft_sibling(size_t index)
   int depth = lft_depth(index);
   return lft_index(depth, offset(index, depth) ^ 1);
 }
+
+size_t lft_parent(size_t index)
+{
+  int depth = lft_depth(index);
+  return lft_index(depth + 1, offset(index, depth) >> 1);
+}
