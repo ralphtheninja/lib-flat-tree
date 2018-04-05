@@ -10,7 +10,7 @@ int TEST_RESULT = 0;
 
 #define ASSERT(A)                                         \
   if (!(A)) {                                             \
-    printf(" [FAIL] " #A "(%s:%d)\n",                     \
+    printf(" [FAIL] " #A " (%s:%d)\n",                    \
            __FILE__, __LINE__);                           \
     TEST_RESULT = 1;                                      \
   } else {                                                \
