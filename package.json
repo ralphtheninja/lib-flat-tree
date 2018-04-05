@@ -1,0 +1,19 @@
+{
+  "name": "libflattree",
+  "version": "0.0.0",
+  "description": "Map a binary tree to a list (c version of mafintosh/flat-tree).",
+  "scripts": {
+    "test": "make test && ./test",
+    "tdd": "nodemon -w . -e h,c -x 'npm run test'"
+  },
+  "keywords": [
+    "dat",
+    "c",
+    "flat-tree"
+  ],
+  "author": "Lars-Magnus Skog <ralphtheninja@riseup.net>",
+  "license": "MIT",
+  "devDependencies": {
+    "nodemon": "^1.17.3"
+  }
+}
