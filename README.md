@@ -12,8 +12,8 @@
 
 int main(void)
 {
-  printf("index: %d\n", lft_index(3, 1));
-  printf("parent: %d\n", lft_parent(5));
+  printf("index: %ld\n", lft_index(3, 1));
+  printf("parent: %ld\n", lft_parent(5));
   return 0;
 }
 ```
