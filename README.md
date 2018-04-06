@@ -94,6 +94,56 @@ Returns the right spanning index in the tree `index` spans.
 
 As above but with pre computed depth.
 
+### `lft_iterator* lft_iterator_create(size_t index);`
+
+Create an iterator starting at `index`.
+
+The `lft_iterator*` is dynamically allocated so you need to call `free()` when you're done using it.
+
+### `void lft_iterator_seek(lft_iterator* it, size_t index);`
+
+Move the iterator to `index`.
+
+### `bool lft_iterator_is_left(lft_iterator* it);`
+
+Returns `1` if the iterator is at a left sibling, otherwise `0`.
+
+### `bool lft_iterator_is_right(lft_iterator* it);`
+
+Returns `1` if the iterator is at a right sibling, otherwise `0`.
+
+### `size_t lft_iterator_prev(lft_iterator* it);`
+
+Move the iterator to the previous item in the tree. Returns current `index` if `offset` is `0`.
+
+### `size_t lft_iterator_next(lft_iterator* it);`
+
+Move the iterator to the next item in the tree.
+
+### `size_t lft_iterator_sibling(lft_iterator* it);`
+
+Move the iterator to the current sibling index.
+
+### `size_t lft_iterator_parent(lft_iterator* it);`
+
+Move the iterator to the current parent index.
+
+### `size_t lft_iterator_left_span(lft_iterator* it);`
+
+Move the iterator to the current left span index.
+
+### `size_t lft_iterator_right_span(lft_iterator* it);`
+
+Move the iterator to the current right span index.
+
+### `size_t lft_iterator_left_child(lft_iterator* it);`
+
+Move the iterator to the current left child index.
+
+### `size_t lft_iterator_right_child(lft_iterator* it);`
+
+Move the iterator to the current right child index.
+
 ## License
 
 MIT
