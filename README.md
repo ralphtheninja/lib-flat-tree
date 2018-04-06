@@ -48,6 +48,10 @@ As above but with pre computed depth.
 
 Returns the index of this elements sibling.
 
+### `size_t lft_sibling_2(size_t index, int depth);`
+
+As above but with pre computed depth.
+
 ### `size_t lft_parent(size_t index);`
 
 Returns the index of the parent element.
