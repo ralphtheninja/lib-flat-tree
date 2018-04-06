@@ -56,6 +56,10 @@ Returns the index of the left child.
 
 Returns the index of the right child.
 
+### `size_t lft_left_span(size_t index);`
+
+Returns the left spanning index in the tree `index` spans.
+
 ## License
 
 MIT
