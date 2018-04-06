@@ -5,8 +5,6 @@
 [![npm](https://img.shields.io/npm/v/libflattree.svg)](https://www.npmjs.com/package/libflattree.h)
 [![Build Status](https://travis-ci.org/ralphtheninja/libflattree.svg?branch=master)](https://travis-ci.org/ralphtheninja/libflattree)
 
-**NOTE!** The API can change at any time. Do not use.
-
 ## Usage
 
 ```c
