@@ -1,5 +1,10 @@
 #include "libflattree.h"
 
+static inline int64_t pow_2(int64_t n)
+{
+  return (int64_t)1 << n;
+}
+
 static inline int64_t is_even(int64_t n)
 {
   return n % 2 == 0;
@@ -12,7 +17,7 @@ static inline int64_t is_odd(int64_t n)
 
 int64_t lft_index(int64_t depth, int64_t offset)
 {
-  return (offset << (depth + 1)) | ((1 << depth) - 1);
+  return (offset * pow_2(depth + 1)) | (pow_2(depth) - 1);
 }
 
 int64_t lft_depth(int64_t index)
@@ -87,7 +92,7 @@ int64_t lft_left_span(int64_t index)
 int64_t lft_left_span_2(int64_t index, int64_t depth)
 {
   if (is_even(index)) return index;
-  return lft_offset_2(index, depth) * (1 << (depth + 1));
+  return lft_offset_2(index, depth) * pow_2(depth + 1);
 }
 
 int64_t lft_right_span(int64_t index)
@@ -98,7 +103,7 @@ int64_t lft_right_span(int64_t index)
 int64_t lft_right_span_2(int64_t index, int64_t depth)
 {
   if (is_even(index)) return index;
-  return (lft_offset_2(index, depth) + 1) * (1 << (depth + 1)) - 2;
+  return (lft_offset_2(index, depth) + 1) * pow_2(depth + 1) - 2;
 }
 
 //
@@ -120,7 +125,7 @@ void lft_iterator_seek(lft_iterator* it, int64_t index)
 
   if (is_odd(index)) {
     it->offset = lft_offset(index);
-    it->factor = 1 << (lft_depth(index) + 1);
+    it->factor = pow_2(lft_depth(index) + 1);
   } else {
     it->offset = index / 2;
     it->factor = 2;
