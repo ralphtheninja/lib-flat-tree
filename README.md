@@ -88,6 +88,10 @@ As above but with pre computed depth.
 
 Returns the right spanning index in the tree `index` spans.
 
+### `size_t lft_right_span_2(size_t index, int depth);`
+
+As above but with pre computed depth.
+
 ## License
 
 MIT
