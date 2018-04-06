@@ -13,9 +13,8 @@
 
 int main(void)
 {
-  printf("index: %d\n", lft_index(0, 0));
-  printf("index: %d\n", lft_index(2, 1));
   printf("index: %d\n", lft_index(3, 1));
+  printf("parent: %d\n", lft_parent(5));
   return 0;
 }
 ```
@@ -23,9 +22,8 @@ int main(void)
 Outputs:
 
 ```
-index: 0
-index: 11
 index: 23
+parent: 3
 ```
 
 ## API
