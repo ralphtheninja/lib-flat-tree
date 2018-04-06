@@ -6,6 +6,7 @@
 size_t lft_index(int depth, int offset);
 int lft_depth(size_t index);
 int lft_offset(size_t index);
+int lft_offset_2(size_t index, int depth);
 size_t lft_sibling(size_t index);
 size_t lft_parent(size_t index);
 size_t lft_left_child(size_t index);

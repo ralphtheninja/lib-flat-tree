@@ -40,6 +40,10 @@ Returns the depth of an element.
 
 Returns the relative offset of an element.
 
+### `int lft_offset_2(size_t index, int depth);`
+
+As above but with pre computed depth.
+
 ### `size_t lft_sibling(size_t index);`
 
 Returns the index of this elements sibling.
