@@ -69,3 +69,10 @@ size_t lft_left_span(size_t index)
   int depth = lft_depth(index);
   return offset(index, depth) * (1 << depth + 1);
 }
+
+size_t lft_right_span(size_t index)
+{
+  if (is_even(index)) return index;
+  int depth = lft_depth(index);
+  return (offset(index, depth) + 1) * (1 << depth + 1) - 2;
+}

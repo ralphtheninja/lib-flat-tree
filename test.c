@@ -120,6 +120,19 @@ void test_left_span()
   ASSERT(lft_left_span(56) == 56);
 }
 
+void test_right_span()
+{
+  ASSERT(lft_right_span(0) == 0);
+  ASSERT(lft_right_span(1) == 2);
+  ASSERT(lft_right_span(3) == 6);
+  ASSERT(lft_right_span(7) == 14);
+  ASSERT(lft_right_span(11) == 14);
+  ASSERT(lft_right_span(19) == 22);
+  ASSERT(lft_right_span(15) == 30);
+  ASSERT(lft_right_span(23) == 30);
+  ASSERT(lft_right_span(27) == 30);
+}
+
 int main(int argc, char** argv)
 {
   TEST(index);
@@ -130,6 +143,7 @@ int main(int argc, char** argv)
   TEST(left_child);
   TEST(right_child);
   TEST(left_span);
+  TEST(right_span);
 
   return TEST_RESULT;
 }
