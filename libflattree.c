@@ -55,8 +55,12 @@ size_t lft_parent_2(size_t index, int depth)
 
 size_t lft_left_child(size_t index)
 {
+  return lft_left_child_2(index, lft_depth(index));
+}
+
+size_t lft_left_child_2(size_t index, int depth)
+{
   if (is_even(index)) return -1;
-  int depth = lft_depth(index);
   return lft_index(depth - 1, lft_offset_2(index, depth) << 1);
 }
 
