@@ -22,6 +22,7 @@ size_t lft_right_child(size_t index);
 size_t lft_right_child_2(size_t index, int depth);
 
 size_t lft_left_span(size_t index);
+size_t lft_left_span_2(size_t index, int depth);
 
 size_t lft_right_span(size_t index);
 
