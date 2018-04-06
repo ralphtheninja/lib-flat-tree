@@ -1,22 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include "test.h"
 #include "libflattree.h"
 
-int TEST_RESULT = 0;
-
-#define TEST(fn)                               \
-  printf("# Testing " #fn "\n");               \
-  test_##fn();
-
-#define ASSERT(A)                                         \
-  if (!(A)) {                                             \
-    printf(" [FAIL] " #A " (%s:%d)\n",                    \
-           __FILE__, __LINE__);                           \
-    TEST_RESULT = 1;                                      \
-  } else {                                                \
-    printf(" [OK] " #A "\n");                             \
-  }
-
+BEGIN_TEST();
 
 void test_index()
 {
@@ -145,5 +132,7 @@ int main(int argc, char** argv)
   TEST(left_span);
   TEST(right_span);
 
-  return TEST_RESULT;
+  TEST_REPORT();
+
+  return TEST_RESULT();
 }
