@@ -144,8 +144,16 @@ Move the iterator to the current left child index.
 
 Move the iterator to the current right child index.
 
+## Also see
+
+- [mafintosh/flat-tree]: Original node module
+- [datrs/flat-tree]: A port of the node module to rust
+- [bcomnes/flattree]: A port of the node module to Go
+
 ## License
 
 MIT
 
 [mafintosh/flat-tree]: https://github.com/mafintosh/flat-tree
+[datrs/flat-tree]: https://github.com/datrs/flat-tree
+[bcomnes/flattree]: https://github.com/bcomnes/flattree
