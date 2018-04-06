@@ -120,6 +120,71 @@ void test_right_span()
   ASSERT(lft_right_span(27) == 30);
 }
 
+void test_iterator()
+{
+  lft_iterator *it = lft_iterator_create(0);
+
+  ASSERT(it->index == 0);
+  ASSERT(it->offset == 0);
+  ASSERT(it->factor == 2);
+
+  ASSERT(lft_iterator_prev(it) == 0);
+  ASSERT(lft_iterator_is_left(it) == 1);
+  ASSERT(lft_iterator_is_right(it) == 0);
+
+  ASSERT(lft_iterator_parent(it) == 1);
+  ASSERT(lft_iterator_parent(it) == 3);
+  ASSERT(lft_iterator_parent(it) == 7);
+
+  ASSERT(lft_iterator_right_child(it) == 11);
+  ASSERT(lft_iterator_left_child(it) == 9);
+  ASSERT(lft_iterator_next(it) == 13);
+
+  ASSERT(lft_iterator_is_left(it) == 0);
+  ASSERT(lft_iterator_is_right(it) == 1);
+
+  ASSERT(lft_iterator_left_span(it) == 12);
+  ASSERT(lft_iterator_next(it) == 14);
+  ASSERT(lft_iterator_next(it) == 16);
+  ASSERT(lft_iterator_parent(it) == 17);
+  ASSERT(lft_iterator_parent(it) == 19);
+  ASSERT(lft_iterator_parent(it) == 23);
+
+  ASSERT(lft_iterator_right_span(it) == 30);
+  lft_iterator_seek(it, 23);
+  ASSERT(it->index == 23);
+
+  ASSERT(lft_iterator_right_child(it) == 27);
+  ASSERT(lft_iterator_sibling(it) == 19);
+  ASSERT(lft_iterator_prev(it) == 11);
+  ASSERT(lft_iterator_left_child(it) == 9);
+  ASSERT(lft_iterator_prev(it) == 5);
+  ASSERT(lft_iterator_left_child(it) == 4);
+  ASSERT(lft_iterator_prev(it) == 2);
+  ASSERT(lft_iterator_prev(it) == 0);
+
+  free(it);
+}
+
+void test_iterator_non_leaf_start()
+{
+  lft_iterator *it = lft_iterator_create(17);
+
+  ASSERT(it->index == 17);
+  ASSERT(it->offset == 4);
+
+  ASSERT(lft_iterator_is_left(it) == 1);
+  ASSERT(lft_iterator_is_right(it) == 0);
+
+  ASSERT(lft_iterator_parent(it) == 19);
+  ASSERT(lft_iterator_parent(it) == 23);
+  ASSERT(lft_iterator_parent(it) == 15);
+
+  ASSERT(lft_iterator_left_span(it) == 0);
+
+  free(it);
+}
+
 int main(int argc, char** argv)
 {
   TEST(index);
@@ -131,6 +196,8 @@ int main(int argc, char** argv)
   TEST(right_child);
   TEST(left_span);
   TEST(right_span);
+  TEST(iterator);
+  TEST(iterator_non_leaf_start);
 
   TEST_REPORT();
 
