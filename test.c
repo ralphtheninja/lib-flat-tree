@@ -73,14 +73,16 @@ void test_parent()
 
 void test_child_to_parent_to_child()
 {
+  int i, j;
   int64_t child = 0;
-  for (int i = 0; i < 50; i++) {
+
+  for (i = 0; i < 50; i++) {
     child = lft_parent(child);
   }
 
   ABORT(child == 1125899906842623);
 
-  for (int j = 0; j < 50; j++) {
+  for (j = 0; j < 50; j++) {
     child = lft_left_child(child);
   }
 
