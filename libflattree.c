@@ -12,7 +12,7 @@ static inline int is_odd(int n)
 
 size_t lft_index(int depth, int offset)
 {
-  return (offset << depth + 1) | ((1 << depth) - 1);
+  return (offset << (depth + 1)) | ((1 << depth) - 1);
 }
 
 int lft_depth(size_t index)
@@ -87,7 +87,7 @@ size_t lft_left_span(size_t index)
 size_t lft_left_span_2(size_t index, int depth)
 {
   if (is_even(index)) return index;
-  return lft_offset_2(index, depth) * (1 << depth + 1);
+  return lft_offset_2(index, depth) * (1 << (depth + 1));
 }
 
 size_t lft_right_span(size_t index)
@@ -98,5 +98,5 @@ size_t lft_right_span(size_t index)
 size_t lft_right_span_2(size_t index, int depth)
 {
   if (is_even(index)) return index;
-  return (lft_offset_2(index, depth) + 1) * (1 << depth + 1) - 2;
+  return (lft_offset_2(index, depth) + 1) * (1 << (depth + 1)) - 2;
 }
