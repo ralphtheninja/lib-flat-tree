@@ -4,6 +4,8 @@
 
 > Map a binary tree to a list (c version of [mafintosh/flat-tree]).
 
+**NOTE!** The API can change at any time. Do not use.
+
 ## Usage
 
 ```c
