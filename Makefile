@@ -4,4 +4,4 @@ test: test.c libflattree.c libflattree.h
 	$(CC) $(CFLAGS) test.c libflattree.c -o test
 
 clean:
-	rm -rf test
+	rm -fv test

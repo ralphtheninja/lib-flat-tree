@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "description": "Map a binary tree to a list (c version of mafintosh/flat-tree).",
   "scripts": {
-    "test": "make test && ./test",
+    "test": "make clean test && ./test",
     "tdd": "nodemon -w . -e h,c -x 'npm run test'"
   },
   "keywords": [
