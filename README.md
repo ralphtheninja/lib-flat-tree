@@ -46,6 +46,10 @@ Returns the index of this elements sibling.
 
 Returns the index of the parent element.
 
+### `size_t lft_left_child(size_t index);`
+
+Returns the index of the left child.
+
 ## License
 
 MIT

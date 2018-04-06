@@ -84,6 +84,18 @@ void test_parent()
   ASSERT(lft_parent(27) == 23);
 }
 
+void test_left_child()
+{
+  ASSERT(lft_left_child(0) == -1);
+  ASSERT(lft_left_child(444) == -1);
+  ASSERT(lft_left_child(3) == 1);
+  ASSERT(lft_left_child(11) == 9);
+  ASSERT(lft_left_child(15) == 7);
+  ASSERT(lft_left_child(21) == 20);
+  ASSERT(lft_left_child(23) == 19);
+  ASSERT(lft_left_child(27) == 25);
+}
+
 int main(int argc, char** argv)
 {
   TEST(index);
@@ -91,6 +103,7 @@ int main(int argc, char** argv)
   TEST(offset);
   TEST(sibling);
   TEST(parent);
+  TEST(left_child);
 
   return TEST_RESULT;
 }

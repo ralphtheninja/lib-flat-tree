@@ -8,5 +8,6 @@ int lft_depth(size_t index);
 int lft_offset(size_t index);
 size_t lft_sibling(size_t index);
 size_t lft_parent(size_t index);
+size_t lft_left_child(size_t index);
 
 #endif // __libflattree_h__
