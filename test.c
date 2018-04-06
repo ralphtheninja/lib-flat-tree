@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "test.h"
+#include "node_modules/test.h/test.h"
 #include "libflattree.h"
 
 BEGIN_TEST();
