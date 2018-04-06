@@ -64,7 +64,7 @@ As above but with pre computed depth.
 
 ### `int64_t lft_left_child(int64_t index);`
 
-Returns the index of the left child.
+Returns the index of the left child. Returns `-1` if `index` is even, i.e. if the element is a leaf.
 
 ### `int64_t lft_left_child_2(int64_t index, int64_t depth);`
 
@@ -72,7 +72,7 @@ As above but with pre computed depth.
 
 ### `int64_t lft_right_child(int64_t index);`
 
-Returns the index of the right child.
+Returns the index of the right child. Returns `-1` if `index` is even, i.e. if the element is a leaf.
 
 ### `int64_t lft_right_child_2(int64_t index, int64_t depth);`
 
