@@ -28,6 +28,8 @@ index: 23
 
 ## API
 
+The functions below ending with a `_2` takes a pre computed `depth` parameter. Since calculating `depth` is an iterative process, these functions are an optimization to avoid having to re-calculate `depth`.
+
 ### `size_t lft_index(int depth, int offset);`
 
 Returns an array index for the tree element at the given depth and offset.
