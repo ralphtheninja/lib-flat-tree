@@ -71,6 +71,22 @@ void test_parent()
   ASSERT(lft_parent(27) == 23);
 }
 
+void test_child_to_parent_to_child()
+{
+  int64_t child = 0;
+  for (int i = 0; i < 50; i++) {
+    child = lft_parent(child);
+  }
+
+  ABORT(child == 1125899906842623);
+
+  for (int j = 0; j < 50; j++) {
+    child = lft_left_child(child);
+  }
+
+  ASSERT(child == 0);
+}
+
 void test_left_child()
 {
   ASSERT(lft_left_child(0) == -1);
@@ -192,6 +208,7 @@ int main(int argc, char** argv)
   TEST(offset);
   TEST(sibling);
   TEST(parent);
+  TEST(child_to_parent_to_child);
   TEST(left_child);
   TEST(right_child);
   TEST(left_span);
