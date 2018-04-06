@@ -1,5 +1,7 @@
 # libflattree
 
+[![Build Status](https://travis-ci.org/ralphtheninja/libflattree.svg?branch=master)](https://travis-ci.org/ralphtheninja/libflattree)
+
 > Map a binary tree to a list (c version of [mafintosh/flat-tree]).
 
 ## Usage
