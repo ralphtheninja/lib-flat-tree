@@ -50,6 +50,10 @@ Returns the index of the parent element.
 
 Returns the index of the left child.
 
+### `size_t lft_right_child(size_t index);`
+
+Returns the index of the right child.
+
 ## License
 
 MIT

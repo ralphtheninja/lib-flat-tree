@@ -96,6 +96,18 @@ void test_left_child()
   ASSERT(lft_left_child(27) == 25);
 }
 
+void test_right_child()
+{
+  ASSERT(lft_right_child(0) == -1);
+  ASSERT(lft_right_child(444) == -1);
+  ASSERT(lft_right_child(3) == 5);
+  ASSERT(lft_right_child(11) == 13);
+  ASSERT(lft_right_child(15) == 23);
+  ASSERT(lft_right_child(21) == 22);
+  ASSERT(lft_right_child(23) == 27);
+  ASSERT(lft_right_child(27) == 29);
+}
+
 int main(int argc, char** argv)
 {
   TEST(index);
@@ -104,6 +116,7 @@ int main(int argc, char** argv)
   TEST(sibling);
   TEST(parent);
   TEST(left_child);
+  TEST(right_child);
 
   return TEST_RESULT;
 }
