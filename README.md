@@ -1,9 +1,9 @@
-# libflattree
+# lib-flat-tree
 
 > Map a binary tree to a list (c version of [mafintosh/flat-tree]).
 
-[![npm](https://img.shields.io/npm/v/libflattree.svg)](https://www.npmjs.com/package/libflattree.h)
-[![Build Status](https://travis-ci.org/ralphtheninja/libflattree.svg?branch=master)](https://travis-ci.org/ralphtheninja/libflattree)
+[![npm](https://img.shields.io/npm/v/lib-flat-tree.svg)](https://www.npmjs.com/package/lib-flat-tree.h)
+[![Build Status](https://travis-ci.org/ralphtheninja/lib-flat-tree.svg?branch=master)](https://travis-ci.org/ralphtheninja/lib-flat-tree)
 
 ## Usage
 

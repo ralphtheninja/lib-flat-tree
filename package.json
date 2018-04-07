@@ -1,5 +1,5 @@
 {
-  "name": "libflattree",
+  "name": "lib-flat-tree",
   "version": "1.0.1",
   "description": "Map a binary tree to a list (c version of mafintosh/flat-tree).",
   "scripts": {
